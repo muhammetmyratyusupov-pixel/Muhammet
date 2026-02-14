@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İyi ki Doğdun Halicam</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #fff7f9, #f7c6d0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 360px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #e2556d;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    p {
+      color: #333;
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .footer {
+      margin-top: 15px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    /* Kalpler */
+    .heart {
+      position: absolute;
+      bottom: -20px;
+      color: #e2556d;
+      font-size: 18px;
+      animation: floatUp 8s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.4);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>İyi ki doğdun Halicam</h1>
+    <p>
+      Seni tanıdığım günden beri hayatımda birçok şey daha güzel, daha anlamlı.
+      Bazen hiçbir şey yapmasak bile, sadece yanında olmak yetiyor bana.
+    </p>
+    <p>
+      Aşkım, umarım bu yeni yaşın sana huzur, sağlık ve bol bol gülüş getirir.
+      Hayat bazen zorlayıcı olabiliyor ama sen yanımdayken her şey daha kolay geliyor.
+    </p>
+    <p>
+      İyi ki varsın sevgilim, iyi ki hayatımdasın.<br>
+      Nice güzel yaşlara, birlikte 🤍
+    </p>
+    <div class="footer">Sen gülünce dünya duruyor.</div>
+  </div>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 10000);
+    }
+
+    setInterval(createHeart, 800);
+  </script>
+
+</body>
+</html>
